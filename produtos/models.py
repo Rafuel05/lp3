@@ -11,7 +11,8 @@ class Produto(models.Model):
     preco = models.DecimalField(max_digits=12, decimal_places=2)
     imagens = models.ImageField(upload_to='fotos/produtos',blank=True)
     estoque = models.IntegerField()
-    esta_disponivel = models.DateTimeField(auto_now_add=True)
+    esta_disponivel = models.BooleanField(default=True)
     modificado_em= models.DateTimeField(auto_now=True)
+    criado_em= models.DateTimeField(auto_now_add=True)
 
     
