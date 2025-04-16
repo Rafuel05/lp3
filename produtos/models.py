@@ -4,7 +4,7 @@ from categoria.models import Categoria
 
 # Create your models here.
 class Produto(models.Model):
-    categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
+    categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE, null =True)
     produto_nome = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=210, unique=True)
     descricao = models.TextField(max_length=300)
@@ -13,6 +13,6 @@ class Produto(models.Model):
     estoque = models.IntegerField()
     esta_disponivel = models.BooleanField(default=True)
     modificado_em= models.DateTimeField(auto_now=True)
-    criado_em= models.DateTimeField(auto_now_add=True)
+    criado_em= models.DateTimeField(auto_now_add=True, null=True)
 
     
