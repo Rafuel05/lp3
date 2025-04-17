@@ -29,9 +29,11 @@
                 <div class="card-body">
                     
                     <ul class="list-menu">
-                    
+                    <li><a href="{% url 'loja' %}">
+                        Todos
+                    </a></li>
                     {% for cat in opcoes %}
-                    <li><a  href="#">{{cat.categoria_nome}} </a></li>
+                    <li><a  href="{{ cat.get_url }}">{{cat.categoria_nome}} </a></li>
                     {% endfor %}
                     </ul>
     
